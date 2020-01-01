@@ -5,14 +5,17 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
 " Set fzf runtime
-set rtp+=/usr/local/opt/fzf
+set rtp+=/usr/bin/fzf
+
+" Set Leader key to space
+let mapleader="\<space>"
 
 " Enable syntax highlighting
 syntax on
 filetype plugin indent on
 
 " Colorscheme see https://github.com/hukl/Smyck-Color-Scheme
-color smyck
+" color smyck
 
 " Add line numbers
 set number
@@ -67,7 +70,7 @@ map <leader>d :ALEGoToDefinition<CR>
 map <leader>r :ALEFindReferences<CR>
 
 " Highlight characters behind the 80 chars margin
-:au BufWinEnter * let w:m2=matchadd('ColumnMargin', '\%>80v.\+', -1)
+" :au BufWinEnter * let w:m2=matchadd('ColumnMargin', '\%>80v.\+', -1)
 
 " Disable code folding
 set nofoldenable
@@ -129,7 +132,6 @@ set updatetime=250
 " lightline / Ale
 
 let g:lightline = {
-      \ 'colorscheme': 'smyck'
 \}
 
 let g:lightline.component_expand = {
